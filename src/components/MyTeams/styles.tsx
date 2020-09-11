@@ -16,10 +16,12 @@ export const ContainerTeams = styled.div`
     padding: 28px;
   }
   @media ${query({ to: 'md' })} {
+    min-height: auto;
     margin: 0;
     border-radius: 0;
   }
   @media ${query({ to: 'sm' })} {
+    min-height: auto;
     margin: 0;
     border-radius: 0;
   }

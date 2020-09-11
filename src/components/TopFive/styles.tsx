@@ -76,6 +76,7 @@ export const CardTopFive = styled.div`
     > div {
       > div {
         span {
+          min-width: 200px;
           max-width: 200px;
           white-space: nowrap;
           overflow: hidden;

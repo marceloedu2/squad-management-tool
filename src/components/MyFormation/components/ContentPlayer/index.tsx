@@ -17,7 +17,7 @@ const ContentPlayer: React.FC<IContentPlayer> = ({ column, row }) => {
   const { formObject, updateFormation } = useFormation()
 
   useEffect(() => {
-    if (formObject > 0 && formObject[column][row]) {
+    if (formObject[column][row]) {
       setPlayer(formObject[column][row])
     } else {
       setPlayer({} as IPlayer)

@@ -23,7 +23,7 @@ const TopFive: React.FC<ITopFive> = ({ agePlayers }) => {
           <div>
             {agePlayers.highestAge?.map((item, index) => (
               <div key={index}>
-                <span>{item.player_name} </span>
+                <span>{item.firstname ? item.firstname : item.lastname ? item.lastname : item.player_name}</span>
                 <b>{item.age}</b>
               </div>
             ))}
@@ -34,7 +34,7 @@ const TopFive: React.FC<ITopFive> = ({ agePlayers }) => {
           <div>
             {agePlayers.lowestAge?.map((item, index) => (
               <div key={index}>
-                <span>{item.player_name} </span>
+                <span>{item.firstname ? item.firstname : item.lastname ? item.lastname : item.player_name}</span>
                 <b>{item.age}</b>
               </div>
             ))}
