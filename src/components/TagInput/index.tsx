@@ -43,7 +43,7 @@ const TagInput: React.FC<ITagInput> = ({
 
   useEffect(() => {
     defValue && setTags(defValue)
-  }, [])
+  }, [defValue])
 
   const handlerInputKeyDown = useCallback(event => {
     event.target.value = event.target.value.replace(';', '')

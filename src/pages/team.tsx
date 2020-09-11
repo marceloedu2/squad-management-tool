@@ -78,6 +78,9 @@ const Team: React.FC = () => {
     if (id) {
       setTeam(indexMyTeam(String(id)))
       createFormation(indexMyTeam(String(id)).formationObject)
+    }else {
+      setTeam({} as IMyTeams)
+      createFormation([])
     }
   }, [id])
 
