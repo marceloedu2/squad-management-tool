@@ -32,4 +32,3 @@ npm run dev
  or
 yarn dev
 ```
-# squad-management-tool
