@@ -33,7 +33,6 @@ const TagInput: React.FC<ITagInput> = ({
   const inputTagRef = useRef(null)
 
   const { fieldName, defaultValue, error, registerField } = useField(name)
-
   useEffect(() => {
     registerField({
       name: fieldName,
@@ -44,12 +43,11 @@ const TagInput: React.FC<ITagInput> = ({
 
   useEffect(() => {
     defValue && setTags(defValue)
-  }, [defValue])
+  }, [])
 
   const handlerInputKeyDown = useCallback(event => {
     event.target.value = event.target.value.replace(';', '')
     const newTag = event.target.value
-
     if ((event.key === 'Enter' || event.key === ';') && newTag) {
       if (tags.find(tag => tag.toLowerCase() === newTag.toLowerCase())) {
         event.preventDefault()
@@ -63,13 +61,13 @@ const TagInput: React.FC<ITagInput> = ({
     if (event.which === 13) {
       event.preventDefault()
     }
-  }, [])
+  }, [tags])
 
   const handlerRemoveTag = useCallback(i => {
     const newTags = [...tags]
     newTags.splice(i, 1)
     setTags(newTags)
-  }, [])
+  }, [tags])
 
   const handlerClickInput = useCallback(event => {
     event.preventDefault()
@@ -93,7 +91,6 @@ const TagInput: React.FC<ITagInput> = ({
             <input
               type="text"
               id="inputTagsValue"
-              defaultValue=""
               onKeyDown={() => handlerInputKeyDown(event)}
             />
           </LiTagInput>
